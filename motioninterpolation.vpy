@@ -6,9 +6,10 @@
 # source: https://github.com/haasn/gentoo-conf/blob/nanodesu/home/nand/.mpv/filters/mvtools.vpy
 
 import vapoursynth
+import os
 
 core = vapoursynth.core
-core.std.LoadPlugin(path="/home/solosaravanan/.config/mpv/libmvtools.so")
+core.std.LoadPlugin(os.path.expanduser("~/.config/mpv/libmvtools.so"))
 # ref: http://avisynth.org.ru/mvtools/mvtools2.html#functions
 # default is 400, less means interpolation will only happen when it will work well
 ignore_threshold=140
