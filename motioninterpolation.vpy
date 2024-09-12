@@ -51,17 +51,11 @@ if not (mpix > 2.5 or clip.fps_num/clip.fps_den > 59):
         #'blksize':16,
         #'searchparam':1
     }
-    blockParams = {
-        'thscd1': ignore_threshold,
-        'thscd2': int(scene_change_percentage*255/100),
-        'mode': 3,
-    }
 
     if mpix > 1.5:
         # can't handle these on Full HD with Intel i5-2500k
         # see the description of these parameters in http://avisynth.org.ru/mvtools/mvtools2.html#functions
         analParams['search'] = 0
-        blockParams['mode'] = 0
         quality = 'low'
     else:
         quality = 'high'
@@ -74,8 +68,7 @@ if not (mpix > 2.5 or clip.fps_num/clip.fps_den > 59):
     sup  = core.mv.Super(clip, pel=2)
     bvec = core.mv.Analyse(sup, isb=True, **analParams)
     fvec = core.mv.Analyse(sup, isb=False, **analParams)
-    clip = core.mv.BlockFPS(clip, sup, bvec, fvec,
-            num=dst_fps_num, den=dst_fps_den, 
-            **blockParams)
+    clip = core.mv.FlowFPS(clip, sup, bvec, fvec,
+            num=dst_fps_num, den=dst_fps_den)
 
 clip.set_output()
