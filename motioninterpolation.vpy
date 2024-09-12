@@ -9,7 +9,12 @@ import vapoursynth
 import os
 
 core = vapoursynth.core
+
+#Load mvtools plugin
 core.std.LoadPlugin(os.path.expanduser("~/.config/mpv/libmvtools.so"))
+#Load FFMS2 plugins
+core.std.LoadPlugin(os.path.expanduser("~/.config/mpv/libffms2.so.4"))
+
 # ref: http://avisynth.org.ru/mvtools/mvtools2.html#functions
 # default is 400, less means interpolation will only happen when it will work well
 ignore_threshold=140
