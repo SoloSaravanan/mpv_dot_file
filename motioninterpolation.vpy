@@ -52,15 +52,7 @@ if not (mpix > 2.5 or clip.fps_num/clip.fps_den > 59):
         #'searchparam':1
     }
 
-    if mpix > 1.5:
-        # can't handle these on Full HD with Intel i5-2500k
-        # see the description of these parameters in http://avisynth.org.ru/mvtools/mvtools2.html#functions
-        analParams['search'] = 0
-        quality = 'low'
-    else:
-        quality = 'high'
-
-
+    quality = 'high'
     dst_fps_num = int(dst_fps * 1e4)
     dst_fps_den = int(1e4)
     print("Reflowing from {} fps to {} fps (quality={})".format(clip.fps_num/clip.fps_den,dst_fps_num/dst_fps_den,quality))
