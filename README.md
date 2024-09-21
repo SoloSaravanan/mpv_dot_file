@@ -3,9 +3,10 @@ mpv with realtime frame interpolation
 
 Requirement:
 ```
-sudo dnf install ffms2 fftw lsof mediainfo nasm python3-vapoursynth vapoursynth-plugins vapoursynth-tools
+sudo dnf install ffms2 fftw lsof mediainfo mpv nasm python3-vapoursynth vapoursynth-plugins vapoursynth-tools
 ```
 
+Clone
 ```
 git clone https://github.com/SoloSaravanan/mpv_dot_file ~/.config/mpv
 ```
