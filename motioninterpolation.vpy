@@ -44,11 +44,11 @@ mpix = clip.width * clip.height / 1000000
 # Skip interpolation for >1080p or 60 Hz content due to performance
 if not (mpix > 2.5 or clip.fps_num/clip.fps_den > 59):
     analParams = {
-        'overlap': 0,
+        'overlap': 2,
         'search': 3,
         'truemotion': True,
         #'chrome': True,
-        #'blksize':16,
+        'blksize':16,
         #'searchparam':1
     }
 
