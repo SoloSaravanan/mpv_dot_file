@@ -38,6 +38,10 @@ else:
     clip = core.ffms2.Source(source=in_filename)
     dst_fps=float(dst_fps)
 
+# Downscale to 1080p if the video is larger
+if clip.width > 1920 or clip.height > 1080:
+    clip = core.resize.Bicubic(clip, width=1920, height=1080)
+
 # resolution in megapixels. 1080p ≈ 2MP, 720p ≈ 1MP
 mpix = clip.width * clip.height / 1000000
 
