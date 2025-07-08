@@ -104,9 +104,9 @@ local user_opts = {
 
     -- Time, title and description display
     show_title = true,                      -- show title in the OSC (above seekbar)
-    title = "${media-title}",               -- title above seekbar format: "${media-title}" or "${filename}"
+    title = "${filename}",               -- title above seekbar format: "${media-title}" or "${filename}"
     title_font_size = 28,                   -- font size of the title text (above seekbar)
-    dynamic_title = true,                   -- change title if {media-title} and {filename} differ (eg: when playing URLs or audio)
+    dynamic_title = false,                   -- change title if {media-title} and {filename} differ (eg: when playing URLs or audio)
 
     show_chapter_title = true,              -- show chapter title alongside timestamp (below seekbar)
     chapter_fmt = "%s",                     -- format for chapter display on seekbar hover (set to "no" to disable)
@@ -129,14 +129,14 @@ local user_opts = {
     -- Title bar settings
     window_title = true,                    -- show window title in borderless/fullscreen mode
     window_controls = true,                 -- show window controls (close, minimize, maximize) in borderless/fullscreen
-    window_controls_title = "${media-title}", -- same as title but for window_controls
+    window_controls_title = "${filename}", -- same as title but for window_controls
 
     -- Subtitle display settings
     raise_subtitles = true,                 -- whether to raise subtitles above the osc when it's shown
     raise_subtitle_amount = 160,            -- how much subtitles rise when the osc is shown
 
     -- Buttons display and functionality
-    compact_mode = true,                    -- replace the jump buttons with the seek/chapter buttons
+    compact_mode = false,                    -- replace the jump buttons with the seek/chapter buttons
 
     jump_buttons = true,                    -- show the jump backward and forward buttons
     jump_amount = 10,                       -- change the jump amount in seconds
@@ -151,7 +151,7 @@ local user_opts = {
     volume_control = true,                  -- show mute button and volume slider
     volume_control_type = "linear",         -- volume scale type: "linear" or "logarithmic"
 
-    info_button = false,                    -- show info button
+    info_button = true,                    -- show info button
     ontop_button = true,                    -- show window on top button
     screenshot_button = false,              -- show screenshot button
     screenshot_flag = "subtitles",          -- flag for screenshot button: "subtitles", "video", "window", "each-frame"
